@@ -1,7 +1,7 @@
 import logging
 import re
 
-from graph import Graph, QuestLine, Path
+from graph import Graph, QuestLine
 from enum import Enum
 
 
@@ -10,7 +10,7 @@ class Parser:
     @staticmethod
     def parse_file(file_path: str) -> (Graph, int, list[QuestLine]):
         graph = Graph()
-        start_node_index = -1
+        start_node_index = None
         quests: list[QuestLine] = []
         vertex_names_to_indexes: dict[str, int] = dict()
         vertex_indexes_to_names: dict[int, str] = dict()

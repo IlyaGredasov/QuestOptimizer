@@ -3,8 +3,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from copy import deepcopy
 
-INF = 10 ** 20
-
 
 @dataclass
 class QuestLine:
@@ -92,10 +90,10 @@ class PathState:
 
 class Graph:
     def __init__(self, n: int = 0):
-        self.adjacency_matrix = [[INF for _ in range(n)] for _ in range(n)]
+        self.adjacency_matrix = [[float("inf") for _ in range(n)] for _ in range(n)]
 
     def __len__(self) -> int:
         return len(self.adjacency_matrix)
 
-    def __getitem__(self, key) -> list[int]:
+    def __getitem__(self, key) -> list[float]:
         return self.adjacency_matrix[key]
